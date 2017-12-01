@@ -1,0 +1,104 @@
+<!doctype html>
+<html ng-app>
+    <head>
+        <title>MultiSell Maker</title>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+        <link type="text/css" rel="stylesheet" href="css/stylesheet.css">
+        <script type="text/javascript" src="js/angular-1.0.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/MultisellController.js"></script>
+    </head>
+    <body>
+        <div class="container" ng-controller="MultisellController">
+
+            <div class="row">
+                <div class="page-header">
+                    <h1>MultiSell Maker</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <h2>Multisell Final</h2>
+                <div id="multisell-final">
+                    &lt;?xml version="1.0" encoding="utf-8"?&gt; <br />
+                    &lt;list&gt;    
+                    <div ng-repeat="item in itens">    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- [{{item.name}}] --&gt;<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="{{item.id}}"&gt;<br />
+                        <span ng-repeat="ingredient in item.ingredients">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ingredient id="{{ingredient.id}}" count="{{ingredient.count}}" enchant="{{ingredient.enchant}}"/&gt;<br /></span>
+                        <span ng-repeat="production in item.productions">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;production id="{{production.id}}" count="{{production.count}}" enchant="{{production.enchant}}"/&gt;<br /></span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;
+                    </div>
+                    &lt;/list&gt;
+                </div>
+                <br />
+                <div class="controls controls-row btn-group">
+                    <button ng-click="back();" id="multisell-back" class="span2 btn btn-small btn-inverse">Back</button>
+                    <button ng-click="reset();" id="multisell-reset" class="span2 btn btn-small btn-danger">Reset</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <hr />
+                <h2>Create Multisell</h2>
+                <form class="form-inline">
+                    <label class="control-label">Item Name:</label>
+                    <div class="controls controls-row">
+                        <input ng-model="itemName" id="item-name" class="span12" type="text" placeholder="Item name">
+                    </div>
+                    <div ng-show="alerts.item" class="alert alert-error">
+                        <strong>Warning!</strong>
+                        {{alerts.item}}
+                    </div>
+                    <br />
+                    <div class="ingredient-group">
+                        <label class="control-label">Ingradient:</label>
+                        <div class="controls controls-row">
+                            <input ng-model="ingredientId" id="ingredient-id" class="span3" type="number" placeholder="Ingradient id">
+                            <input ng-model="ingredientCount" id="ingredient-count" class="span3" type="text" placeholder="count">
+                            <input ng-model="ingredientEnchant" id="ingredient-enchant" class="span3" type="text" placeholder="enchant">
+                            <button ng-click="addIngredient();" id="ingredient-add" class="span3 btn" type="button">Add Ingredient</button>
+                        </div>
+                        <div ng-show="alerts.ingredient" class="alert alert-error">
+                            <strong>Warning!</strong>
+                            {{alerts.ingredient}}
+                        </div>
+                    </div>
+                    <br />
+                    <div class="production-group">
+                        <label class="control-label">Production</label>
+                        <div class="controls controls-row">
+                            <input ng-model="productionId" id="production-id" class="span3" type="text" placeholder="Production id">
+                            <input ng-model="productionCount" id="production-count" class="span3" type="text" placeholder="count">
+                            <input ng-model="productionEnchant" id="production-enchant" class="span3" type="text" placeholder="enchant">
+                            <button ng-click="addProduction();" id="production-add" class="span3 btn" type="button">Add Production</button>
+                        </div>
+                        <div ng-show="alerts.production" class="alert alert-error">
+                            <strong>Warning!</strong>
+                            {{alerts.production}}
+                        </div>
+                    </div>
+                    <br />
+                    <div class="controls controls-row row">
+                        <button ng-click="newItem();" ng-model="itemNew" id="item-new" class="span6 btn btn-large btn-primary">New Item</button>
+                        <button ng-click="finalize();" ng-model="itemFinalize" id="item-finalize" class="span6 btn btn-large btn-success">Finalize</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="row">
+                <hr />
+                <div> 
+                    <address>
+                        &COPY; <strong>MultiSell Maker</strong> - Developed by Weuller Krysthian.<br />
+                        Made with <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>, <a href="http://angularjs.org/">Angular.js</a> and <a href="http://jquery.com/">jQuery</a>.<br />
+                        <strong>Contact:</strong> <a href="mailto:weuller.krysthian@gmail.com">weuller.krysthian@gmail.com</a>.
+
+                    </address>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

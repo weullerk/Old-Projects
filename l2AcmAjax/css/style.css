@@ -1,0 +1,15 @@
+﻿@charset "utf-8";
+/** Reset **/
+*{margin:0; padding:0; border:0; list-style:none; font-family:Calibri, sans-serif; color:#2F4F4F;}
+
+/* Formatação de Formulario */
+fieldset{border:0; margin:5px;}
+label{display:block; margin:10px 0 2px 0;}
+label.error{float:none; color:#2F4F4F; margin:1px 0 0 0; font-size:10px; font-style:italic; vertical-align:top;}
+.formInput{width:300px; height:36px; border:1px solid #c1c1c1; padding:0 5px; color:#2F4F4F; font-size:14px; font-weight:bold; font-family:Calibri, sans-serif; background:#F8F8FF;}
+.submit{width:auto; display:block; margin:10px 0 0 0; color:#2F4F4F; font-weight:normal;}
+.formInput:focus{background:#F5F5F5;}
+
+/* Formatação da mensagem */
+#msg{margin:5px; padding:5px; border:1px solid #c1c1c1; background:#F8F8FF; display:none;}
+#msg:hover{background:#F5F5F5;}

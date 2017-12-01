@@ -1,0 +1,175 @@
+<!doctype html>
+<html ng-app>
+    <head>
+        <title>Time Ranking</title>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+        <link type="text/css" rel="stylesheet" href="css/stylesheet.css">
+        <script type="text/javascript" src="js/angular-1.0.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/RankingController.js"></script>
+    </head>
+    <body>
+        <div class="container" ng-controller="RankingController">
+
+            <div class="row">
+                <div class="page-header">
+                    <h1>Time Ranking <small>by Weuller Krysthian</small></h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <h2>Buscar</h2>
+                <form name="ranking" method="post" class="form-inline row">
+                    <div class="controls controls-row span6">
+                        <fieldset>
+                            <legend>Characters</legend>
+                            <div>
+                                <select name="tipo-ranking" ng-click="initRankings();" id="tipo-ranking" class="span2">
+                                    <option value="0" selected="selected">Tipo</option>
+                                    <option value="1">Geral</option>
+                                    <option value="2">Diario</option>
+                                    <option value="3">Semanal</option>
+                                    <option value="4">Mensal</option>
+                                </select>
+                                <select name="raca-char" ng-click="initClasses();" id="raca-char" class="span2">
+                                    <option value="0" selected="selected">Raça</option>
+                                    <option value="all">Todas as Raças</option>
+                                    <option value="1">Humano</option>
+                                    <option value="2">Elf</option>
+                                    <option value="3">Dark Elf</option>
+                                    <option value="4">Orc</option>
+                                    <option value="5">Dwarf</option>
+                                </select>
+                                <select name="classe-char" id="classe-char" class="span2">
+                                    <option value="0" selected="selected">Classe</option>
+                                    <option value="all">Todas as Classes</option>
+                                    <option ng-repeat="classe in classes" value="{{classe.idClasse}}">{{classe.classe}}</option>
+                                </select>
+                            </div>
+                            <br /><br />
+                            <div>
+                                <input type="text" name="level-ini-char" id="level-ini-char" class="span3" placeholder="Level Inicial">
+                                <input type="text" name="level-fin-char" id="level-fin-char" class="span3" placeholder="Level Final">
+                            </div>
+                            <br /><br />
+                            <div>
+                                <select name="ranking-char" id="ranking-char" class="span3">
+                                    <option value="0" selected="selected">Ranking</option>
+                                    <option ng-repeat="ranking in rankings" value="{{ranking.val}}">{{ranking.name}}</option>
+                                </select>
+                                <select name="limite-char" id="limite-char" class="span3">
+                                    <option value="0" selected="selected">Limite</option>
+                                    <option value="10">10</option>
+                                    <option value="30">30</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <br /><br />
+                                <button ng-click="getCharacters();" name="buscar-char" class="btn btn-primary span6">Buscar Characters</button>
+                            </div>
+                        </fieldset>
+                    </div>     
+
+                    <div class="controls controls-row span6">
+                        <fieldset>
+                            <legend>Clans</legend>
+                            <div>
+                                <select name="ranking-clan" id="ranking-clan" class="span3">
+                                    <option value="0" selected="selected">Ranking</option>
+                                    <option value="level">Level</option>
+                                    <option value="reputacao">Reputação</option>
+                                    <option value="membros">Membros</option>
+                                    <option value="pvp">PvP</option>
+                                    <option value="pk">PK</option>
+                                </select>
+                                <select name="limite-clan" id="limite-clan" class="span3">
+                                    <option value="0" selected="selected">Limite</option>
+                                    <option value="10">10</option>
+                                    <option value="30">30</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                            <br />
+
+                            <div class="row">
+                                <br />
+                                <button ng-click="getClans();" name="buscar-clan" class="btn btn-primary span6">Buscar Clans</button>
+                            </div>
+                        </fieldset>
+                    </div>
+                </form>
+                <div ng-show="message" class="alert {{message.type}}">{{message.message}}</div>
+            </div>
+
+            <div class="row" ng-show="characters">
+                <h2>Ranking Characters</h2>
+                <table class="table table-hover table-condensed">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>Raça</th>
+                            <th>Classe</th>
+                            <th>Clan</th>
+                            <th>{{ranking}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="char in characters">
+                            <th>{{$index + 1}}°</th>
+                            <th>{{char.nome}}</th>
+                            <th>{{char.raca}}</th>
+                            <th>{{char.classe}}</th>
+                            <th>{{char.clan}}</th>
+                            <th>{{char.pontos}}</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row" ng-show="clans">
+                <h2>Ranking Clans</h2>
+                <table class="table table-hover table-condensed">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>Líder</th>
+                            <th>Aliança</th>
+                            <th>Castelo</th>
+                            <th>{{ranking}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="clan in clans">
+                            <th>{{$index + 1}}°</th>
+                            <th>{{clan.nome}}</th>
+                            <th>{{clan.lider}}</th>
+                            <th>{{clan.alianca}}</th>
+                            <th>{{clan.castelo}}</th>
+                            <th>{{clan.pontos}}</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <hr />
+                <div> 
+                    <address>
+                        &COPY; <strong>Time Ranking</strong> - Developed by Weuller Krysthian.<br />
+                        Made with <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>, <a href="http://angularjs.org/">Angular.js</a> and <a href="http://jquery.com/">jQuery</a>.<br />
+                        <strong>Contact:</strong> <a href="mailto:weuller.krysthian@gmail.com">weuller.krysthian@gmail.com</a>.
+
+                    </address>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

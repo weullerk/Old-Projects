@@ -1,0 +1,31 @@
+1. Extraia os arquivos dentro do seu site.
+
+2. Configure o arquivo 'config.php' dentro da pasta 'configs'
+
+3. Caso tenha algum erro de compatibilidade das versões, configure as Tabelas e Colunas da sua database no arquivo config.php
+(Esse script se basea na versão Interlude, pois não tem compatibilidade com a classe kamael, caso queira para kamael procure no forum onde baixou.)
+
+4. Para instalar um grafico, insira a função do grafico em uma página:
+
+// Se não passar nenhum valor, por padrão o grafico será de Pizza. Caso passe algum dado inválido, o gráfico não será gerado.
+Função que gera estatistica de Classe: estatisticaDeClasse();
+Função que gera estatistica de Classe: estatisticaDeGenero();
+
+Para escolher o tipo de grafico, coloque o valor entre os parenteses da função:
+
+Grafico de Pizza: PieChart
+Grafico de Barra: ColumnChart
+Grafico de Linha: LineChart
+
+Exemplo:
+estatisticaDeClasse('LineChart');
+estatisticaDeGenero('ColumnChart');
+
+*Não se esqueça de copiar os arquivos de configurações e includes da index e o script da api google, caso queira colocar o script em seu site de forma personalizada.
+
+
+Sistema com fácil integração no site.
+
+Sistema facil de se personalizar.
+
+Para dúvidas utilize o fórum onde o arquivo foi postado.

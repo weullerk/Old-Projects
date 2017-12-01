@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+*{margin:0;padding:0;}
+
+#titulo{
+	text-align:center;
+}
+
+#box_classes{
+	width:600px;
+	height:auto;
+	margin:0 auto;
+}
+
+#box_classes li{
+	width:50%;
+	float:left;
+	list-style:none;
+}
+
+#box_characters{
+	width:800px;
+	height:auto;
+	margin:0 auto;
+}
+
+#box_characters ul{
+	clear:both;
+	
+}
+
+#box_characters li{
+	width:20%;
+	float:left;
+	list-style:none;
+	text-align:center;
+}
+
+#box_characters_all ul{
+	clear:both;
+	
+}
+
+#box_characters_all li{
+	width:16%;
+	float:left;
+	list-style:none;
+	text-align:center;
+}

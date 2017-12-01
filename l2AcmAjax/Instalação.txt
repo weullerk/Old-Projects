@@ -1,0 +1,16 @@
+1. Extraia os arquivos dentro do seu site.
+
+2. Linke as ás páginas ao site, ou utilize um script de queryString
+
+3. Configure o arquivo 'config.php' dentro da pasta 'configs'
+
+4. Caso tenha algum erro de compatibilidade das versões, configure as Tabelas e Colunas da sua database no arquivo config.php
+
+
+Sistema utiliza javascript não obstrutivo(Caso o usuario do site, desative o javascript, o sistema funcionará normalmente).
+
+Sistema com fácil integração no site.
+
+Sistema facil de se personalizar.
+
+Para dúvidas utilize o fórum onde o arquivo foi postado.

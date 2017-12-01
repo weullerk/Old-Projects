@@ -1,0 +1,21 @@
+Script de castle siege
+Desenvolvido por Weuller Krysthian
+weuller_krysthian@hotmail.com
+Criado em 26/02/2013
+
+Instalação: 
+1 - Extraia o conteúdo dentro da sua web.
+2 - Abra o arquivo scripts/functions.php
+3 - Entre com as suas configurações nas linhas 13 á 19.
+3.1 - Linha 13: Url do site com o caminho completo, se estiver utilizando localmente coloque: 'http://localhost/castlesiege/'.
+3.2 - Linha 14: Ip do servidor onde se encontra o mysql, se estiver utilizando localmente coloque: 'localhost'.
+3.3 - Linha 15: Porta do mysql, por padrão utilizado 3306, caso não tenha alterado na hora da instalação, deixe como se encontra.
+3.4 - Linha 16: Login do mysql, por padrão utilizado 'root', caso não tenha alterado na hora da instalação, deixe como se encontra.
+3.5 - Linha 17: Senha do mysql, caso não utilize deixe vazio.
+3.6 - Linha 18: Nome da database do servidor.
+3.7 - Linha 19: A largura da parte de conteúdo do seu site, ou a largura que o script ira conter.
+4 - Personalização
+4.1 - Background; caso o seu site já tenha um background, vc pode retirar o background personalizado no arquivo castlesiege.php na linha 32.
+4.2 - Sinta se livre para fazer qualquer personalização no script, mantendo os creditos pelo script.
+
+

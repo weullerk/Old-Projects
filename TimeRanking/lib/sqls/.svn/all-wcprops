@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/weulk-scripts/!svn/ver/18/Scripts/time-ranking/lib/sqls
+END
+vcharacters.sql
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/weulk-scripts/!svn/ver/21/Scripts/time-ranking/lib/sqls/vcharacters.sql
+END
+vclasses.sql
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/weulk-scripts/!svn/ver/21/Scripts/time-ranking/lib/sqls/vclasses.sql
+END
+procedure insert_ranking_dinamico.sql
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/weulk-scripts/!svn/ver/17/Scripts/time-ranking/lib/sqls/procedure%20insert_ranking_dinamico.sql
+END
+tabela characters_ranking_dinamico.sql
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/weulk-scripts/!svn/ver/17/Scripts/time-ranking/lib/sqls/tabela%20characters_ranking_dinamico.sql
+END
+event ranking_semanal.sql
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/weulk-scripts/!svn/ver/18/Scripts/time-ranking/lib/sqls/event%20ranking_semanal.sql
+END
+trigger update_ranking_dinamico.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/weulk-scripts/!svn/ver/17/Scripts/time-ranking/lib/sqls/trigger%20update_ranking_dinamico.sql
+END
+event ranking_mensal.sql
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/weulk-scripts/!svn/ver/18/Scripts/time-ranking/lib/sqls/event%20ranking_mensal.sql
+END
+vclans.sql
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/weulk-scripts/!svn/ver/21/Scripts/time-ranking/lib/sqls/vclans.sql
+END
+event ranking_diario.sql
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/weulk-scripts/!svn/ver/18/Scripts/time-ranking/lib/sqls/event%20ranking_diario.sql
+END
+ativar eventos.sql
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/weulk-scripts/!svn/ver/17/Scripts/time-ranking/lib/sqls/ativar%20eventos.sql
+END

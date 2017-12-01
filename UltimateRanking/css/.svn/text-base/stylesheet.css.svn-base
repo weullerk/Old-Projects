@@ -1,0 +1,7 @@
+.page-header {
+    margin-bottom: 0;
+}
+
+.alert{margin-top: 10px; margin-bottom: 0;}
+
+table tbody tr th{font-weight: normal !important;}
